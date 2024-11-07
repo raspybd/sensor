@@ -1,6 +1,11 @@
-   {
+    {
      "build": {
-       "command": "echo 'No build step required'",
-       "output": "landing_page.html"
+       "builder": "nixpacks",
+       "nixpacks": {
+         "phases": {
+           "install": "npm install -g http-server"
+         },
+         "start": "http-server -p $PORT"
+       }
      }
    }
