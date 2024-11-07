@@ -1,11 +1,11 @@
-   {
-     "build": {
-       "builder": "nixpacks",
-       "nixpacks": {
-         "phases": {
-           "install": "npm install -g http-server"
-         },
-         "start": "http-server -p $PORT"
-       }
-     }
-   }
+{
+  "build": {
+    "builder": "nixpacks",
+    "buildCommand": "npm install"
+  },
+  "deploy": {
+    "startCommand": "npm start",
+    "healthcheckPath": "/",
+    "healthcheckTimeout": 100
+  }
+}
