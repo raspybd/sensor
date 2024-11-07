@@ -1,1 +1,6 @@
-
+   {
+     "build": {
+       "command": "echo 'No build step required'",
+       "output": "landing_page.html"
+     }
+   }
