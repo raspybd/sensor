@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home Temperature Sensors Analysis</title>
+    <style>
+        /* Previous styles remain... */
+        
+        /* New styles for video section */
+        .video-section {
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 20px 0;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        .comparison-table th {
+            background-color: #333;
+            color: white;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .chart-container {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        
+        .testimonial {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .faq-section {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .faq-answer {
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- Previous header section remains... -->
+
+<section class="video-section">
+    <h2>Smart Home Temperature Sensors Analysis</h2>
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/VqKO7xpterk" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+    </div>
+    
+    <h3>Sensor Comparison</h3>
+    <div class="chart-container">
+        <canvas id="sensorChart"></canvas>
+    </div>
+    
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Sensor Model</th>
+                <th>Connectivity</th>
+                <th>Accuracy</th>
+                <th>Price Range</th>
+                <th>Battery Life</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Sensor 1</td>
+                <td>Wi-Fi</td>
+                <td>±0.3°C</td>
+                <td>\$25-30</td>
+                <td>1 year</td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+    
+    <h3>User Testimonials</h3>
+    <div class="testimonial">
+        <p>"These sensors have completely transformed how I manage my home's temperature. The accuracy is impressive!"</p>
+        <strong>- John D.</strong>
+    </div>
+    
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq-section">
+        <div class="faq-item">
+            <div class="faq-question">How do I install these sensors?</div>
+            <div class="faq-answer">
+                Installation is typically straightforward: Mount the sensor on the wall, connect to your network, and integrate with Home Assistant.
+            </div>
+        </div>
+        <!-- Add more FAQ items -->
+    </div>
+</section>
+
+<!-- Previous footer section remains... -->
+
+<script>
+// Chart.js implementation
+const ctx = document.getElementById('sensorChart').getContext('2d');
+const sensorChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Sensor 1', 'Sensor 2', 'Sensor 3', 'Sensor 4', 'Sensor 5'],
+        datasets: [{
+            label: 'Accuracy (±°C)',
+            data: [0.3, 0.5, 0.2, 0.4, 0.3],
+            backgroundColor: 'rgba(54, 162, 235, 0.5)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+// FAQ Toggle functionality
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+    });
+});
+</script>
+
+</body>
+</html>
